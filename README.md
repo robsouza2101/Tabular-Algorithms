@@ -16,7 +16,7 @@ A ideia principal é construir uma base sólida de estudo em ML supervisionado, 
 
 ## 🏗️ Arquitetura do Projeto
 O projeto foi estruturado de forma modular para facilitar a manutenção e a comparação entre modelos:
-
+```
 tabular-algorithms/
 │── data/ # Datasets utilizados (ex: Iris, Titanic, Wine)
 │── notebooks/ # Jupyter Notebooks de cada algoritmo
@@ -31,7 +31,7 @@ tabular-algorithms/
 │── utils/ # Funções auxiliares (ex: métricas, gráficos)
 │── compare_models.ipynb # Notebook para análise comparativa final
 │── README.md # Documentação do projeto
-
+```
 
 Fluxo de execução (padrão para todos os modelos):  
 1. **Carregamento dos dados** → (datasets do `scikit-learn` ou UCI).  
