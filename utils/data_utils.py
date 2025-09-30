@@ -2,6 +2,8 @@ import pandas as pd
 from sklearn.datasets import load_iris, load_wine, load_breast_cancer
 import seaborn as sns
 import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 def see_data_info(data):
     """Display basic information about a dataset.
@@ -48,6 +50,16 @@ def load_dataset(name="iris"):
         raise ValueError(f"Dataset '{name}' is not supported.")
     
     return data
+
+def preprocess_data(X, y, test_size=0.2, scale=True):
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42)
+    
+    if scale:
+        scaler = StandardScaler()
+        X_train = scaler.fit_transform(X_train)
+        X_test = scaler.transform(X_test)
+    
+    return X_train, X_test, y_train, y_test
 
 if __name__ == "__main__":
     # Example usage
